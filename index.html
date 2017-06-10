@@ -7,6 +7,14 @@
 </head>
 
 <body>
+    <div>
+        <h1>Cats List</h1>
+        <div>
+            <ul data-bind="foreach: catList">
+                <li data-bind="text: name, click: $parent.updateCat"></li>
+            </ul>
+        </div>
+    </div>
     <div data-bind="with: currentCat">
         <h2 data-bind="text: name"></h2>
         <h3 data-bind="text: level"></h3>
