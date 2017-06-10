@@ -24,7 +24,7 @@ var ViewModel = function() {
 
     // Observable
     this.incrementCounter = function() {
-        this.currentCat().clickCount(this.currentCat().clickCount() + 1);
+        this.clickCount(this.clickCount() + 1);
     }
 }
 
