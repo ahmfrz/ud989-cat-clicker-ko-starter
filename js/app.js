@@ -1,4 +1,4 @@
-var ViewModel = function() {
+var Cat = function(){
     // Observables
     this.clickCount = ko.observable(0);
     this.name = ko.observable('Tabby');
@@ -16,13 +16,16 @@ var ViewModel = function() {
         }
     }, this);
 
-    // Observable
-    this.incrementCounter = function() {
-        this.clickCount(this.clickCount() + 1);
-    }
-
     // Observable array
     this.nicknames = ko.observableArray(["Tabs", "Cutie", "OceanEye"]);
+};
+var ViewModel = function() {
+    this.currentCat = ko.observable(new Cat());
+
+    // Observable
+    this.incrementCounter = function() {
+        this.currentCat().clickCount(this.currentCat().clickCount() + 1);
+    }
 }
 
 ko.applyBindings(new ViewModel());
